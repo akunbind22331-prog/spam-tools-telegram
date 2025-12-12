@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram War Machine v6.0 - ILLEGAL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #0f0;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Hacking Effect -->
+    <div class="hack-effect"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="glitch" data-text="TELEGRAM WAR MACHINE">TELEGRAM ATTACK TOOLS</h1>
+            <p class="subtitle">follow me on instagram : @ilhamstecuu_</p>
+
+            <div class="war-stats">
+                <div class="war-stat">
+                    <span>ACTIVE BOTS</span>
+                    <span id="warBots" class="war-value">0</span>
+                </div>
+                <div class="war-stat">
+                    <span>MESSAGES FIRED</span>
+                    <span id="warMessages" class="war-value">0</span>
+                </div>
+                <div class="war-stat">
+                    <span>SUCCESS RATE</span>
+                    <span id="warSuccess" class="war-value">100%</span>
+                </div>
+                <div class="war-stat">
+                    <span>ATTACK POWER</span>
+                    <span id="warPower" class="war-value">0%</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Attack Dashboard -->
+        <main>
+            <!-- Section 1: Core Configuration -->
+            <section class="war-panel">
+                <h2>CORE CONFIGURATION</h2>
+                <div class="war-grid">
+                    <div class="input-war">
+                        <label>MASTER BOT TOKEN</label>
+                        <input type="text" id="masterToken" placeholder="Bot token dari @BotFather">
+                    </div>
+                    <div class="war-buttons">
+                        <button onclick="war.validateMaster()" class="war-btn war-btn-green">VALIDATE</button>
+                        <button onclick="war.getBotIntel()" class="war-btn war-btn-blue">STATUS BOT</button>
+                        <button onclick="war.stealthMode()" class="war-btn war-btn-purple">STEALTH</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Nuclear Spam Arsenal -->
+            <section class="war-panel">
+                <h2>BRUTALLITY SPAM BOT</h2>
+
+                <div class="war-grid">
+                    <div class="input-war">
+                        <label>TARGET ID / @USERNAME</label>
+                        <input type="text" id="warTarget" placeholder="Target untuk dihancurkan">
+                    </div>
+                    <div class="input-war">
+                        <label>SPAM PAYLOAD</label>
+                        <textarea id="warPayload" rows="2">HACKED BY SMILEXPLOIT</textarea>
+                    </div>
+                </div>
+
+                <div class="war-grid">
+                    <div class="input-war">
+                        <label>MESSAGE COUNT (0 = INFINITE)</label>
+                        <input type="number" id="warCount" value="0" min="0">
+                    </div>
+                    <div class="input-war">
+                        <label>DELAY MS (1 = BRUTAL)</label>
+                        <input type="number" id="warDelay" value="1" min="1">
+                    </div>
+                </div>
+
+                <div class="war-button-grid">
+                    <button onclick="war.nuclearSpam()" class="war-btn war-btn-red">LAUNCH SPAM</button>
+                    <button onclick="war.multiMediaSpam()" class="war-btn war-btn-orange">MEDIA SPAM</button>
+                    <button onclick="war.chainReaction()" class="war-btn war-btn-red">CHAIN REACTION</button>
+                    <button onclick="war.stopWar()" class="war-btn war-btn-yellow">STOP ATTACK</button>
+                </div>
+            </section>
+
+            <!-- Section 3: Bot Army Control -->
+            <section class="war-panel">
+                <h2>BOT ARMY AATTACK</h2>
+
+                <div class="input-war">
+                    <label>BOT ARMY TOKENS (satu per baris)</label>
+                    <textarea id="armyTokens" rows="4" placeholder="Masukkan 5-10 bot tokens untuk army"></textarea>
+                </div>
+
+                <div class="war-button-grid">
+                    <button onclick="war.deployArmy()" class="war-btn war-btn-red">DEPLOY BOT ARMY</button>
+                    <button onclick="war.coordinatedStrike()" class="war-btn war-btn-red">COORDINATED STRIKE</button>
+                    <button onclick="war.waveAttack()" class="war-btn war-btn-orange">WAVE ATTACK</button>
+                    <button onclick="war.botSwarm()" class="war-btn war-btn-red">BOT SWARM</button>
+                </div>
+            </section>
+
+            <!-- Section 4: Advanced Hijacking -->
+            <section class="war-panel">
+                <h2>HIJACKING BOT</h2>
+
+                <div class="war-grid">
+                    <div class="input-war">
+                        <label>TARGET BOT TOKEN</label>
+                        <input type="password" id="hijackToken" placeholder="Token bot target">
+                    </div>
+                    <div class="input-war">
+                        <label>NEW BOT NAME</label>
+                        <input type="text" id="maliciousName" placeholder="Nama bot setelah dihack">
+                    </div>
+                </div>
+
+                <div class="war-button-grid">
+                    <button onclick="war.completeTakeover()" class="war-btn war-btn-red">COMPLETE TAKEOVER</button>
+                    <button onclick="war.botIdentityTheft()" class="war-btn war-btn-purple">IDENTITY THEFT</button>
+                    <button onclick="war.commandInjection()" class="war-btn war-btn-red">COMMAND INJECTION</button>
+                    <button onclick="war.backdoorBot()" class="war-btn war-btn-purple">INSTALL BACKDOOR</button>
+                </div>
+            </section>
+
+            <!-- Section 5: Group Destruction -->
+            <section class="war-panel">
+                <h2>GROUP ATTACK</h2>
+
+                <div class="input-war">
+                    <label>GROUP ID / INVITE LINK</label>
+                    <input type="text" id="destroyGroup" placeholder="link atau ID grup target">
+                </div>
+
+                <div class="war-button-grid">
+                    <button onclick="war.groupAnnihilation()" class="war-btn war-btn-red">GROUP ANNIHILATION</button>
+                    <button onclick="war.massMemberPurge()" class="war-btn war-btn-red">MASS MEMBER PURGE</button>
+                    <button onclick="war.adminTakeover()" class="war-btn war-btn-orange">ADMIN TAKEOVER</button>
+                    <button onclick="war.groupNuke()" class="war-btn war-btn-red">GROUP NUKE</button>
+                </div>
+            </section>
+
+            <!-- Section 6: User Targeting -->
+            <section class="war-panel">
+                <h2>USER ATTACK</h2>
+
+                <div class="input-war">
+                    <label>TARGET USER ID / @USERNAME</label>
+                    <input type="text" id="eliminateUser" placeholder="User target atau username">
+                </div>
+
+                <div class="war-button-grid">
+                    <button onclick="war.userElimination()" class="war-btn war-btn-red">ATTACK USER</button>
+                    <button onclick="war.psychologicalWarfare()" class="war-btn war-btn-purple">PSYCHOLOGICAL
+                        WARFARE</button>
+                    <button onclick="war.accountSabotage()" class="war-btn war-btn-red">ACCOUNT SABOTAGE</button>
+                    <button onclick="war.reputationDestroy()" class="war-btn war-btn-red">REPUTATION DESTROY</button>
+                </div>
+            </section>
+
+            <!-- Section 7: Exploit Systems -->
+            <section class="war-panel">
+                <h2>EXPLOIT SYSTEMS</h2>
+
+                <div class="war-button-grid">
+                    <button onclick="war.apiFlood()" class="war-btn war-btn-red">API FLOOD EXPLOIT</button>
+                    <button onclick="war.rateLimitBypass()" class="war-btn war-btn-purple">RATE LIMIT BYPASS</button>
+                    <button onclick="war.sessionHijack()" class="war-btn war-btn-red">SESSION HIJACK</button>
+                    <button onclick="war.zeroDayExploit()" class="war-btn war-btn-red">ZERO-DAY EXPLOIT</button>
+                </div>
+            </section>
+
+            <!-- Section 8: Auto-Generated Bots -->
+            <section class="war-panel">
+                <h2>BOT FACTORY</h2>
+
+                <div class="war-grid">
+                    <div class="input-war">
+                        <label>NUMBER OF BOTS TO GENERATE</label>
+                        <input type="number" id="factoryCount" value="20" min="1" max="100">
+                    </div>
+                    <div class="input-war">
+                        <label>BOT NAME PREFIX</label>
+                        <input type="text" id="botPrefix" value="WARBOT">
+                    </div>
+                </div>
+
+                <div class="war-button-grid">
+                    <button onclick="war.botFactory()" class="war-btn war-btn-orange">BOT FACTORY</button>
+                    <button onclick="war.autoConfigBots()" class="war-btn war-btn-purple">AUTO CONFIG</button>
+                    <button onclick="war.massDeployment()" class="war-btn war-btn-red">MASS DEPLOYMENT</button>
+                </div>
+            </section>
+
+            <!-- Section 9: War Intelligence -->
+            <section class="war-panel">
+                <h2>STATUS ATTACK</h2>
+
+                <div class="intel-grid">
+                    <div class="intel-card">
+                        <h3>ATTACK STATS</h3>
+                        <div class="intel-item">
+                            <span>Total Messages:</span>
+                            <span id="intelMessages">0</span>
+                        </div>
+                        <div class="intel-item">
+                            <span>Success Rate:</span>
+                            <span id="intelSuccess">100%</span>
+                        </div>
+                        <div class="intel-item">
+                            <span>Active Attacks:</span>
+                            <span id="intelActive">0</span>
+                        </div>
+                    </div>
+
+                    <div class="intel-card">
+                        <h3>BOT FORCES</h3>
+                        <div class="intel-item">
+                            <span>Army Size:</span>
+                            <span id="intelArmy">0</span>
+                        </div>
+                        <div class="intel-item">
+                            <span>Online:</span>
+                            <span id="intelOnline">0</span>
+                        </div>
+                        <div class="intel-item">
+                            <span>Hijacked:</span>
+                            <span id="intelHijacked">0</span>
+                        </div>
+                    </div>
+
+                    <div class="intel-card">
+                        <h3>SYSTEM POWER</h3>
+                        <div class="intel-item">
+                            <span>Attack Power:</span>
+                            <span id="intelPower">0%</span>
+                        </div>
+                        <div class="intel-item">
+                            <span>API Requests:</span>
+                            <span id="intelRequests">0</span>
+                        </div>
+                        <div class="intel-item">
+                            <span>Uptime:</span>
+                            <span id="intelUptime">00:00:00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 10: War Command -->
+            <section class="war-panel">
+                <h2>WAR COMMAND CENTER</h2>
+
+                <div class="command-grid">
+                    <button onclick="war.emergencyStop()" class="war-btn war-btn-red">STOP ATTACK</button>
+                    <button onclick="war.pauseAll()" class="war-btn war-btn-yellow">PAUSE ALL</button>
+                    <button onclick="war.resumeAll()" class="war-btn war-btn-green">RESUME ALL</button>
+                    <button onclick="war.selfDestruct()" class="war-btn war-btn-red">SELF DESTRUCT</button>
+                    <button onclick="war.clearAll()" class="war-btn war-btn-yellow">CLEAR ALL</button>
+                    <button onclick="war.exportData()" class="war-btn war-btn-blue">EXPORT DATA</button>
+                </div>
+            </section>
+
+            <!-- Section 11: War Log -->
+            <section class="war-panel">
+                <h2>ATTACK LOG</h2>
+
+                <div class="war-log-container">
+                    <div id="warLog" class="war-log">
+                        [SYSTEM] TELEGRAM ATTACK TOOLS
+                        [SYSTEM] All illegal attack systems: OPERATIONAL
+                        [SYSTEM] Nuclear arsenal: ARMED
+                        [SYSTEM] Bot army: READY FOR DEPLOYMENT
+                        [WARNING] This tool performs real illegal attacks
+                        ==================================================
+                    </div>
+
+                    <div class="log-controls">
+                        <button onclick="war.clearLog()" class="war-btn-small">Clear Logs</button>
+                        <button onclick="war.saveLog()" class="war-btn-small">Save Log</button>
+                        <button onclick="war.exportLog()" class="war-btn-small">Export Log</button>
+                        <button onclick="war.autoScroll()" class="war-btn-small">Auto-Scroll</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- War Status -->
+        <footer class="war-status">
+            <div class="status-item">
+                <span class="status-indicator" id="warStatus"></span>
+                <span id="statusText">READY FOR WAR</span>
+            </div>
+            <div class="status-item">
+                <span>ACTIVE BATTLES:</span>
+                <span id="battleCount">0</span>
+            </div>
+            <div class="status-item">
+                <span>DESTRUCTION RATE:</span>
+                <span id="destructionRate">0/ms</span>
+            </div>
+            <div class="status-item">
+                <span>MISSION TIME:</span>
+                <span id="missionTime">00:00:00</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
